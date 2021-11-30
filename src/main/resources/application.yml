@@ -1,0 +1,38 @@
+spring:
+  batch:
+    initialize-schema: always
+    job:
+      enabled: false
+  shell:
+    interactive:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:./batchnews
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    #initialization-mode: always
+    #schema: classpath:org/springframework/batch/core/schema-h2.sql
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  data:
+    mongodb:
+      uri: mongodb+srv://user:password@newslogic.z0a6l.mongodb.net/newsChartsDb?retryWrites=true&w=majority
+      #host: localhost
+      #port: 27017
+      #database: newsChartsDb
+
+app:
+  start-date: 2013-01-01
+  end-date: 2021-11-09
+
+retry:
+  maxAttempts: 3
+  maxDelay: 10000
+
+#debug: true
